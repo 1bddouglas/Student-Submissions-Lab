@@ -155,3 +155,49 @@ const filter90AndAbove = (array) => {
 // check work
 console.log(filter90AndAbove(submissions));
 // returned with Jane's score of 95, so it worked
+
+// extra challenges
+// 1.
+// ---------------------------------------------------------------------------------------------------------------
+const createRange = (start, end) => {
+  const giraffe = [];
+  // for loop is good when we have a start and end
+  for (let llama = start; llama <= end; llama++) {
+    giraffe.push(llama);
+  }
+  return giraffe;
+};
+
+console.log(createRange(2, 5));
+
+// 2.
+// ---------------------------------------------------------------------------------------------------------------
+const countElements = (arrayOfStrings) => {
+  const newObject = {};
+  // modify objects ... TODO
+  // newObject.propertyName = "something";
+  // newObject["propertyName"] = "something";
+  for (const llama of arrayOfStrings) {
+    // not operator (!)
+    if (!newObject.hasOwnProperty(llama)) {
+      newObject[llama] = 1;
+    } else {
+      newObject[llama]++;
+    }
+  }
+  return newObject;
+};
+
+// finding index with an array or string:
+// array[number]
+// string[number]
+
+// square bracket notation on obj to find a property
+// object[string]
+
+console.log(countElements(["a", "b", "a", "c", "a", "b"]));
+// {
+//  a: 3,
+//  b: 2,
+//  c: 1,
+// }
