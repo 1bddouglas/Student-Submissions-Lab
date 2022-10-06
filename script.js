@@ -82,20 +82,24 @@ console.log(submissions);
 
 // 5.
 // ---------------------------------------------------------------------------------------------------------------
-/* const editSubmission = (array, index, score) => {
-  let newScore = (array[index].score = score);
-  newScore.passed >= 60 ? true : false;
+const editSubmission = (array, index, newScore) => {
+  array[index].score = newScore;
+  if (newScore >= 60) {
+    array[index].passed = true;
+  } else {
+    array[index].passed = false;
+  }
 };
 // check work
-console.log(editSubmission(submissions, [0], 40));
-// got undefined, unsure why. Come back later
-*/
+editSubmission(submissions, 0, 40);
+console.log(submissions);
+// Jane now has a score of 40
 
 // 6.
 // ---------------------------------------------------------------------------------------------------------------
 const findSubmissionByName = (array, name) => {
   return array.find((item) => {
-    return (item.name = name);
+    return item.name === name;
   });
 };
 //check work
@@ -105,7 +109,7 @@ console.log(findSubmissionByName(submissions, "Jane"));
 // 7.
 // ---------------------------------------------------------------------------------------------------------------
 const findLowestScore = (array) => {
-  let lowest = 0;
+  let lowest = array[0]; //object
   array.forEach((item) => {
     lowest = Math.min(item.score);
   });
